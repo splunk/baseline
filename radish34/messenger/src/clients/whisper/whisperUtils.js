@@ -30,7 +30,7 @@ async function sendPrivateMessage(
   const { keyId } = whisperId;
   let hash;
   try {
-    hash = await web3.shh.post({
+    const payload = {
       pubKey: recipientId,
       sig: keyId,
       ttl: TTL,
@@ -38,7 +38,10 @@ async function sendPrivateMessage(
       payload: content,
       powTime: POW_TIME,
       powTarget: POW_TARGET,
-    });
+    };
+    console.log('SHH PAYLOAD::');
+    console.log(payload);
+    hash = await web3.shh.post(payload);
   } catch (err) {
     logger.error('Whisper error:', err);
     return undefined;

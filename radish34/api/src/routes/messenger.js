@@ -97,6 +97,8 @@ router.post('/documents', async (req, res) => {
       console.log('Did not recognize message object type:', messageObj);
   }
   res.status(200);
+  console.log('MESSAGE OBJ');
+  console.log(messageObj);
   res.send({ message: `Document (ID: ${docId}) added or updated in radish-api` });
 });
 
