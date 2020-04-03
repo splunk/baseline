@@ -6,6 +6,11 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+printf "\n${GREEN}*** Starting zokrates container ***${NC}\n"
+docker-compose up -d zkp
+# Wait for zkp service to bootup before continuing
+./ops/await_tcp.sh -t 30 -h localhost -p 8080
+
 if [ ! -d ./zkp/output/createMSA ]; then
     sleep 5
 

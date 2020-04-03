@@ -82,5 +82,6 @@ test:
 zk-circuits:
 	@pushd ${radish34} && \
 	rm -rf ./zkp/output && \
+	mkdir -p ./zkp/output && \
 	npm run setup-circuits && \
 	popd

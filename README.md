@@ -32,7 +32,6 @@ Just want to get the __Baseline Protocol__ running locally? The following sequen
 
 ```
 make
-make deploy-contracts
 make start
 make test
 ```
