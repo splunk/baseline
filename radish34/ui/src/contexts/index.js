@@ -15,8 +15,9 @@ import { ProposalProvider } from './proposal-context';
 import { MSAProvider } from './msa-context';
 import { ToastrProvider } from './ToastrContext';
 import { PurchaseOrderProvider } from './purchase-order-context';
+import { Config } from '../config-radish.json';
 
-let uri = 'radish34-api-buyer.docker/graphql';
+let uri = `${Config.radishBuyerAPIURL}/graphql`;
 
 if (window.localStorage.getItem('api')) {
   uri = window.localStorage.getItem('api');
