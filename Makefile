@@ -56,7 +56,7 @@ start-with-splunk: system-check install-config build-containers
 	sleep 75 && \
 	npm run setup-circuits && \
 	npm run deploy && \
-	docker-compose up -f docker-compose-with-splunk.yml -d api-buyer api-supplier1 api-supplier2 ui && \
+	docker-compose -f docker-compose-with-splunk.yml up -d api-buyer api-supplier1 api-supplier2 ui && \
 	popd
 
 start-ethlogger:
